@@ -4,11 +4,11 @@ import Link from "next/link";
 import paths from "@/paths";
 
 interface PostListProps {
-  fetchPosts: () => Promise<PostWithData[]>;
+  fetchData: () => Promise<PostWithData[]>;
 }
 
-export default async function PostList({ fetchPosts }: PostListProps) {
-  const posts = await fetchPosts();
+export default async function PostList({ fetchData }: PostListProps) {
+  const posts = await fetchData();
 
   const renderedPosts = posts.map((post) => {
     const topicSlug = post.topic.slug;
